@@ -149,6 +149,7 @@
       box-shadow: 0 6px 18px rgba(0, 0, 0, .45);
       white-space: nowrap;
       text-align: center;
+      text-decoration: none;
     }
 
     .header-meta {
@@ -475,8 +476,27 @@
         right: 5%;
         bottom : -10%;
       }
+
+      .socials {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
       
+      .sponsors {
+        width: 100%;
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      footer {
+        padding: 18px 10px;
+        gap: 15px;
     }
+
+  }  
+
   </style>
 </head>
 
@@ -499,7 +519,7 @@
       </div>
       <div class="header-meta">
         <div class="headline">CARTA<em>DE TRAGOS</em></div>
-        <div class="ig-badge">@ggggggoteo</div>
+        <a class="ig-badge" href="https://www.instagram.com/ggggggoteo/" target="_blank" rel="noopener noreferrer">@ggggggoteo</a>
       </div>
     </header>
 
@@ -590,7 +610,7 @@
     </main>
 
     <footer>
-      <div class="socials">seguinos en <span>@ggggggoteo</span></div>
+      <div class="socials">seguinos en <span> @ggggggoteo</span></div>
       <div class="sponsors">
         <span>Sernova</span><span>Fernet-Branca</span><span>Chandon</span>
       </div>
