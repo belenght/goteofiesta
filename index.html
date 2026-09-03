@@ -147,6 +147,13 @@
       text-align: center;
     }
 
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-left: auto;
+    }
+
     /* ---------- MAIN GRID ---------- */
     main {
       position: relative;
@@ -419,18 +426,24 @@
       }
 
       .headline {
-        order: 2;
         margin-left: 0;
         text-align: left;
         margin-top: 0;
+        flex: 1 1 auto;
       }
 
       .ig-badge {
-        order: 3;
-        flex-basis: 100%;
         font-size: 16px;
         padding: 10px 20px 9px;
-        margin-top: 6px;
+        flex: 0 1 auto;
+      }
+
+      .header-meta {
+        order: 2;
+        flex: 1 1 100%;
+        width: 100%;
+        margin-left: 0;
+        gap: 14px;
       }
 
       .brand img {
@@ -463,8 +476,10 @@
           <div class="tag">TUCUMÁN Y SAN MARTÍN<span>OPEN 00 HS · ROSARIO</span></div>
         </div>
       </div>
-      <div class="headline">CARTA<em>DE TRAGOS</em></div>
-      <div class="ig-badge">@ggggggoteo</div>
+      <div class="header-meta">
+        <div class="headline">CARTA<em>DE TRAGOS</em></div>
+        <div class="ig-badge">@ggggggoteo</div>
+      </div>
     </header>
 
     <main>
