@@ -5,15 +5,18 @@
   <meta charset="UTF-8">
   <title>goteo — Carta de Tragos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:ital,wght@0,500;0,600;0,700;0,800;0,900;1,700&display=swap"
     rel="stylesheet">
+
   <style>
+
     .nl-narrow {
       display: none !important;
-
     }
+
     :root {
       --bg: #0b0b0a;
       --bg-panel: #151513;
@@ -60,7 +63,8 @@
       isolation: isolate;
     }
 
-    /* decorative drip dots, echoing the logo's own punctuation */
+    /* ---------- DECORACIÓN ---------- */
+
     .dot {
       position: absolute;
       border-radius: 50%;
@@ -70,6 +74,7 @@
     }
 
     /* ---------- HEADER ---------- */
+
     header {
       position: relative;
       display: flex;
@@ -160,6 +165,7 @@
     }
 
     /* ---------- MAIN GRID ---------- */
+
     main {
       position: relative;
       display: grid;
@@ -167,12 +173,12 @@
       gap: 0;
     }
 
-    main>section {
+    main > section {
       padding: 30px 34px;
       border-right: 1px solid var(--line);
     }
 
-    main>section:last-child {
+    main > section:last-child {
       border-right: none;
     }
 
@@ -218,7 +224,8 @@
       margin: 0 0 10px;
     }
 
-    /* classic drinks — grouped by price tier */
+    /* ---------- TRAGOS CLÁSICOS ---------- */
+
     .tier {
       margin-bottom: 16px;
     }
@@ -254,7 +261,8 @@
       color: inherit;
     }
 
-    /* simple price lists */
+    /* ---------- LISTAS ---------- */
+
     ul.plain {
       list-style: none;
       margin: 0;
@@ -283,7 +291,8 @@
       white-space: nowrap;
     }
 
-    /* ---------- COMBOS — the hero section ---------- */
+    /* ---------- COMBOS ---------- */
+
     .combos {
       background:
         radial-gradient(circle at 85% 0%, rgba(200, 255, 46, 0.16), transparent 55%),
@@ -369,10 +378,10 @@
     .combos .note b {
       color: var(--lime);
       font-weight: 400;
-
     }
 
     /* ---------- FOOTER ---------- */
+
     footer {
       position: relative;
       display: flex;
@@ -394,23 +403,66 @@
       color: var(--lime);
     }
 
+    /* ---------- SPONSORS ---------- */
+
     .sponsors {
       display: flex;
-      gap: 22px;
       align-items: center;
-      font-size: 11px;
-      letter-spacing: .14em;
-      font-weight: 800;
-      color: var(--grey);
-      text-transform: uppercase;
+      justify-content: center;
+      gap: 60px;
     }
 
-    @media (max-width:980px) {
+    .sponsor {
+      width: 120px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sponsor img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    /*
+      Ajustes individuales.
+      La "caja" de cada logo tiene tamaños diferentes
+      para compensar las proporciones de los PNG.
+    */
+
+    .sponsor-sernova {
+      width: 110px;
+      height: 70px;
+      transform: scale(1.15);
+      
+    }
+
+    .sponsor-fernet {
+      width: 110px;
+      height: 60px;
+      transform: scale(1.15);
+    }
+
+    .sponsor-chandon {
+      width: 130px;
+      height: 45px;
+
+    }
+
+    /* ---------- TABLET ---------- */
+
+    @media (max-width: 980px) {
+
       main {
         grid-template-columns: 1fr;
       }
 
-      main>section {
+      main > section {
         border-right: none;
         border-bottom: 1px solid var(--line);
       }
@@ -461,7 +513,11 @@
         gap: 10px;
       }
     }
-    @media (max-width:450px) {
+
+    /* ---------- MOBILE ---------- */
+
+    @media (max-width: 450px) {
+
       .headline {
         display: none;
       }
@@ -474,7 +530,7 @@
         position: absolute;
         z-index: 1000;
         right: 5%;
-        bottom : -10%;
+        bottom: -10%;
       }
 
       .socials {
@@ -482,20 +538,35 @@
         display: flex;
         justify-content: center;
       }
-      
+
       .sponsors {
         width: 100%;
-        display: flex;
-        gap: 15px;
+        gap: 30px;
         justify-content: center;
+      }
+
+      .sponsor {
+        width: 20%;
+        height: 45px;
+      }
+
+      .sponsor-sernova {
+        height: 45px;
+      }
+
+      .sponsor-fernet {
+        height: 35px;
+      }
+
+      .sponsor-chandon {
+        height: 25px;
       }
 
       footer {
         padding: 18px 10px;
         gap: 15px;
+      }
     }
-
-  }  
 
   </style>
 </head>
@@ -504,119 +575,350 @@
 
   <div class="sheet">
 
-    
-    <div>      
-      <span class="dot" style="width:5px;height:5px;top:96px;left:36.8%;"></span>
-      <span class="dot" style="width:8px;height:8px;top:120px;left:36%;"></span>
+    <!-- DECORACIÓN -->
+
+    <div>
+      <span
+        class="dot"
+        style="width:5px;height:5px;top:96px;left:36.8%;">
+      </span>
+
+      <span
+        class="dot"
+        style="width:8px;height:8px;top:120px;left:36%;">
+      </span>
     </div>
-      
-      <header>
+
+    <!-- HEADER -->
+
+    <header>
+
       <div>
+
         <div class="brand">
-          <img src="goteo inclinado.png" alt="goteo">
-          <div class="tag">TUCUMÁN Y SAN MARTÍN<span>OPEN 00 HS · ROSARIO</span></div>
+
+          <img
+            src="goteo inclinado.png"
+            alt="goteo">
+
+          <div class="tag">
+            TUCUMÁN Y SAN MARTÍN
+            <span>OPEN 00 HS · ROSARIO</span>
+          </div>
+
         </div>
+
       </div>
+
       <div class="header-meta">
-        <div class="headline">CARTA<em>DE TRAGOS</em></div>
-        <a class="ig-badge" href="https://www.instagram.com/ggggggoteo/" target="_blank" rel="noopener noreferrer">@ggggggoteo</a>
+
+        <div class="headline">
+          CARTA
+          <em>DE TRAGOS</em>
+        </div>
+
+        <a
+          class="ig-badge"
+          href="https://www.instagram.com/ggggggoteo/"
+          target="_blank"
+          rel="noopener noreferrer">
+          @ggggggoteo
+        </a>
+
       </div>
+
     </header>
+
+    <!-- MAIN -->
 
     <main>
 
+      <!-- COMBOS -->
+
       <section class="combos">
+
         <h2>★ Combos</h2>
-        <div class="sub">TODA LA NOCHE · SOLO EFECTIVO</div>
+
+        <div class="sub">
+          TODA LA NOCHE · SOLO EFECTIVO
+        </div>
 
         <div class="combo-list">
+
           <div class="combo-card">
-            <div class="name">Fernet Branca<small>+ 2 Coca Cola</small></div>
-            <div class="price">70.000</div>
+
+            <div class="name">
+              Fernet Branca
+              <small>+ 2 Coca Cola</small>
+            </div>
+
+            <div class="price">
+              70.000
+            </div>
+
           </div>
+
           <div class="combo-card">
-            <div class="name">Vodka<small>+ 4 Speed / 2 Jugos</small></div>
-            <div class="price">60.000</div>
+
+            <div class="name">
+              Vodka
+              <small>+ 4 Speed / 2 Jugos</small>
+            </div>
+
+            <div class="price">
+              60.000
+            </div>
+
           </div>
+
           <div class="combo-card">
-            <div class="name">Gin<small>+ 2 Tónicas / 2 Pomelo</small></div>
-            <div class="price">60.000</div>
+
+            <div class="name">
+              Gin
+              <small>+ 2 Tónicas / 2 Pomelo</small>
+            </div>
+
+            <div class="price">
+              60.000
+            </div>
+
           </div>
+
           <div class="combo-card">
-            <div class="name">Vodka Absolut<small>+ 4 Speed / 2 Pomelo</small></div>
-            <div class="price">90.000</div>
+
+            <div class="name">
+              Vodka Absolut
+              <small>+ 4 Speed / 2 Pomelo</small>
+            </div>
+
+            <div class="price">
+              90.000
+            </div>
+
           </div>
+
         </div>
 
-        <div class="note">Pedí tu combo directo en la barra · <b>TODA LA NOCHE</b></div>
+        <div class="note">
+          Pedí tu combo directo en la barra ·
+          <b>TODA LA NOCHE</b>
+        </div>
+
       </section>
+
+      <!-- TRAGOS CLÁSICOS -->
 
       <section class="clasicos">
-        <h2>Tragos Clásicos <span class="stars">★★★</span></h2>
+
+        <h2>
+          Tragos Clásicos
+          <span class="stars">★★★</span>
+        </h2>
 
         <div class="tier">
-          <span class="tier-price">10.000</span>
-          <div class="tier-items">Fernet Branca c/Coca, Cuba Libre, Campari Orange, Gancia con Sprite, Whiskola, Gin Tonic, Vodka Orange, Brancamenta con Sprite</div>
+
+          <span class="tier-price">
+            10.000
+          </span>
+
+          <div class="tier-items">
+            Fernet Branca c/Coca, Cuba Libre, Campari Orange,
+            Gancia con Sprite, Whiskola, Gin Tonic, Vodka Orange,
+            Brancamenta con Sprite
+          </div>
+
         </div>
 
         <div class="tier">
-          <span class="tier-price">11.000</span>
-          <div class="tier-items">Negroni, Cynar con Pomelo, Cynar Julep, Aperol, Malibu Orange, Shot Tequila, Shot HODLMOSER</div>
+
+          <span class="tier-price">
+            11.000
+          </span>
+
+          <div class="tier-items">
+            Negroni, Cynar con Pomelo, Cynar Julep, Aperol,
+            Malibu Orange, Shot Tequila, Shot HODLMOSER
+          </div>
+
         </div>
 
         <div class="tier">
-          <span class="tier-price">12.000</span>
-          <div class="tier-items">Daikiri, Caipirinha, Caipiroska, Caipirisima, Mojito, Red Mojito, Malibu Mojito, Bacardi c/Speed, Vodka c/Speed, Whisky J<span class="ampersand">&amp;</span>B</div>
+
+          <span class="tier-price">
+            12.000
+          </span>
+
+          <div class="tier-items">
+            Daikiri, Caipirinha, Caipiroska, Caipirisima, Mojito,
+            Red Mojito, Malibu Mojito, Bacardi c/Speed,
+            Vodka c/Speed, Whisky J<span class="ampersand">&amp;</span>B
+          </div>
+
         </div>
 
         <div class="tier">
-          <span class="tier-price">14.000</span>
-          <div class="tier-items">Whisky J<span class="ampersand">&amp;</span>B c/Speed, Vodka Absolut, Baileys, Amarula, Whisky Jameson</div>
+
+          <span class="tier-price">
+            14.000
+          </span>
+
+          <div class="tier-items">
+            Whisky J<span class="ampersand">&amp;</span>B c/Speed,
+            Vodka Absolut, Baileys, Amarula, Whisky Jameson
+          </div>
+
         </div>
 
         <div class="tier">
-          <span class="tier-price">17.000</span>
-          <div class="tier-items">Absolut - Jameson c/Speed</div>
+
+          <span class="tier-price">
+            17.000
+          </span>
+
+          <div class="tier-items">
+            Absolut - Jameson c/Speed
+          </div>
+
         </div>
+
       </section>
 
+      <!-- COLUMNA DERECHA -->
+
       <section class="stack" style="padding:0;">
-        
+
+        <!-- ESPUMANTES -->
+
         <div class="subsection">
-          <h2 style="font-size:19px;">Espumantes</h2>
+
+          <h2 style="font-size:19px;">
+            Espumantes
+          </h2>
+
           <ul class="plain">
-            <li><span>Baron B Extra Brut</span><span>75.000</span></li>
-            <li><span>Chandon Extra Brut</span><span>45.000</span></li>
-            <li><span>Chandon 187</span><span>13.000</span></li>
-            <li><span>Renaissance Extra Brut</span><span>25.000</span></li>
-            <li><span>New Age</span><span>25.000</span></li>
+
+            <li>
+              <span>Baron B Extra Brut</span>
+              <span>75.000</span>
+            </li>
+
+            <li>
+              <span>Chandon Extra Brut</span>
+              <span>45.000</span>
+            </li>
+
+            <li>
+              <span>Chandon 187</span>
+              <span>13.000</span>
+            </li>
+
+            <li>
+              <span>Renaissance Extra Brut</span>
+              <span>25.000</span>
+            </li>
+
+            <li>
+              <span>New Age</span>
+              <span>25.000</span>
+            </li>
+
           </ul>
+
         </div>
+
+        <!-- CERVEZAS -->
+
         <div class="subsection">
-          <h2 style="font-size:19px;">Cervezas</h2>
+
+          <h2 style="font-size:19px;">
+            Cervezas
+          </h2>
+
           <ul class="plain">
-            <li><span>Imperial</span><span>7.000</span></li>
-            <li><span>Heineken</span><span>8.000</span></li>
+
+            <li>
+              <span>Imperial</span>
+              <span>7.000</span>
+            </li>
+
+            <li>
+              <span>Heineken</span>
+              <span>8.000</span>
+            </li>
+
           </ul>
+
         </div>
+
+        <!-- SIN ALCOHOL -->
+
         <div class="subsection">
-          <h2 style="font-size:19px;">Sin Alcohol</h2>
+
+          <h2 style="font-size:19px;">
+            Sin Alcohol
+          </h2>
+
           <ul class="plain">
-            <li><span>Gaseosa</span><span>5.000</span></li>
-            <li><span>Jugo</span><span>5.000</span></li>
-            <li><span>Agua Mineral</span><span>5.000</span></li>
-            <li><span>Speed</span><span>6.000</span></li>
+
+            <li>
+              <span>Gaseosa</span>
+              <span>5.000</span>
+            </li>
+
+            <li>
+              <span>Jugo</span>
+              <span>5.000</span>
+            </li>
+
+            <li>
+              <span>Agua Mineral</span>
+              <span>5.000</span>
+            </li>
+
+            <li>
+              <span>Speed</span>
+              <span>6.000</span>
+            </li>
+
           </ul>
+
         </div>
+
       </section>
 
     </main>
 
+    <!-- FOOTER -->
+
     <footer>
-      <div class="socials">seguinos en <span> @ggggggoteo</span></div>
-      <div class="sponsors">
-        <span>Sernova</span><span>Fernet-Branca</span><span>Chandon</span>
+
+      <div class="socials">
+        seguinos en
+        <span>@ggggggoteo</span>
       </div>
+
+      <div class="sponsors">
+
+        <div class="sponsor sponsor-sernova">
+          <img
+            src="sponsors vodka 2.png"
+            alt="Sernova Vodka">
+        </div>
+
+        <div class="sponsor sponsor-fernet">
+          <img
+            src="sponsors fernet.png"
+            alt="Fernet Branca">
+        </div>
+
+        <div class="sponsor sponsor-chandon">
+          <img
+            src="sponsors chandon.png"
+            alt="Chandon">
+        </div>
+
+      </div>
+
     </footer>
 
   </div>
